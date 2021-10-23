@@ -8,8 +8,13 @@ restart:
 init:
 	git clone https://github.com/RomakinNum1/task3Chat_authorise.git ./services/user_api
 	git clone https://github.com/RomakinNum1/task3Chat_css.git ./services/frontend
+	git clone https://github.com/RomakinNum1/task3Chat_api.git ./services/chat_api
 	cd services/user_api/composer && composer install
+	cd services/frontend/composer && composer install
+	#cd services/chat_api/composer && composer install
 migrate:
 	migrate -path=services/user_api/web/migrations/ -database "mysql://root:root@tcp(task2.loc:8989)/test" up
-composer_autoload:
+composer_restart:
 	cd services/user_api/composer && composer dumpautoload
+runserv:
+	cd services/chat_api && php server.php
