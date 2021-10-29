@@ -1,5 +1,5 @@
 start:
-	cd docker && docker-compose up -d
+	cd docker && docker-compose up --build -d
 down:
 	cd docker && docker-compose down
 restart:
