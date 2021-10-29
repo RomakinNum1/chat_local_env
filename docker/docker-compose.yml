@@ -39,6 +39,8 @@ services:
     ports:
       - "2346:2346"
     command: php /var/www/html/chat_api/server.php start
+    env_file:
+      - ".env"
   myadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
