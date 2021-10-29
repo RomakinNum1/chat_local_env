@@ -16,5 +16,5 @@ migrate:
 	migrate -path=services/user_api/web/migrations/ -database "mysql://root:root@tcp(localhost:8989)/test" up
 composer_restart:
 	cd services/user_api/composer && composer dumpautoload
-runserv:#> ./txt.log
+runserv:
 	cd services/chat_api && php server.php
