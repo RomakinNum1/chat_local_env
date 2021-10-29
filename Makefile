@@ -1,5 +1,6 @@
 start:
 	cd docker && docker-compose up --build -d
+	make migrate
 down:
 	cd docker && docker-compose down
 restart:
